@@ -6,11 +6,13 @@
         {
             //Arrange
             $test_TitleCaseGenerator = new PingPongGenerator;
-            $input = 3;
+            $input = 2;
+            $resultArray = $test_TitleCaseGenerator->generatePingPongArray($input);
+
             //Act
-            $result = $test_TitleCaseGenerator->generatePingPongArray($input);
+            $result = $resultArray[$input-1];
             //Assert
-            $this->assertEquals("123", implode("", $result));
+            $this->assertEquals("2", $result);
         }
 
         function test_pingPong_divBy15()
@@ -19,9 +21,22 @@
           $test_TitleCaseGenerator = new PingPongGenerator;
           $input = 15;
           //Act
-          $result = $test_TitleCaseGenerator->generatePingPongArray($input);
+          $resultArray = $test_TitleCaseGenerator->generatePingPongArray($input);
+          $result = $resultArray[$input-1];
           //Assert
-          $this->assertEquals("1234567891011121314ping-pong", implode("", $result));
+          $this->assertEquals("ping-pong", $result);
+        }
+
+        function test_pingPong_divBy5()
+        {
+          //Arrange
+          $test_TitleCaseGenerator = new PingPongGenerator;
+          $input = 5;
+          //Act
+          $resultArray = $test_TitleCaseGenerator->generatePingPongArray($input);
+          $result = $resultArray[$input-1];
+          //Assert
+          $this->assertEquals("pong", $result);
         }
     }
 ?>
