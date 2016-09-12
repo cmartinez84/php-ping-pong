@@ -10,6 +10,8 @@
 
         } elseif ($i % 5 == 0){
           array_push($outputArray, "pong");
+        } elseif ($i % 3 == 0){
+          array_push($outputArray, "ping");
         } else {
           array_push($outputArray, $i);
         }

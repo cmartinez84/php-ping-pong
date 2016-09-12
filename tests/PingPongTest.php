@@ -38,5 +38,17 @@
           //Assert
           $this->assertEquals("pong", $result);
         }
+
+        function test_pingPong_divBy3()
+        {
+          //Arrange
+          $test_TitleCaseGenerator = new PingPongGenerator;
+          $input = 3;
+          //Act
+          $resultArray = $test_TitleCaseGenerator->generatePingPongArray($input);
+          $result = $resultArray[$input-1];
+          //Assert
+          $this->assertEquals("ping", $result);
+        }
     }
 ?>
